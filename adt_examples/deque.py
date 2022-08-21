@@ -43,7 +43,7 @@ class Deque:
         return DequeIterator(self)
 
 
-class DequeIterator:
+class DequeIterator():
     def __init__(self, deque):
         self.here = deque
 
@@ -53,8 +53,6 @@ class DequeIterator:
     def __next__(self):
         if self.here.list[self.here.lpointer % self.here.dequelength]:
             next = self.here.list[self.here.lpointer % self.here.dequelength]
-            print(self.here.lpointer)
-            print(self.here.rpointer)
             self.here.lpointer += 1
             if self.here.lpointer != self.here.rpointer + 1:
                 return next
